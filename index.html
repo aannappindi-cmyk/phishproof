@@ -3,27 +3,72 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Akshat Annappindi</title>
+  <title>PhishProof by Akshat Annappindi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: #ffffff;
-      color: #111111;
-      text-align: center;
-      padding: 0 16px;
+      padding: 24px 16px;
+      font-family: "Inter", system-ui, sans-serif;
+      color: #eef1ff;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 94, 120, 0.35), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(80, 140, 255, 0.40), transparent 50%),
+        #0d1230;
     }
-    h1 { margin: 0 0 12px; font-size: 2.5rem; }
-    p { margin: 0; font-size: 1.25rem; color: #555555; }
+    .card {
+      max-width: 640px;
+      text-align: center;
+      padding: 48px 36px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.2rem, 7vw, 3.4rem);
+      line-height: 1.1;
+      background: linear-gradient(90deg, #ff7a8f, #8fb4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .product {
+      margin: 0 0 24px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      color: #ffb3bf;
+    }
+    p.desc {
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #c9d0f0;
+    }
   </style>
 </head>
 <body>
-  <h1>Akshat Annappindi</h1>
-  <p>Coming Soon: Phish Proof</p>
+  <main class="card">
+    <h1>Akshat Annappindi</h1>
+    <div class="product">🎣 PhishProof</div>
+    <p class="desc">
+      PhishProof is a phishing awareness platform for student organizations. Members practice spotting
+      realistic fake emails and texts aimed at college students, click the red flags for instant feedback,
+      and club officers track which scams trip people up most. The goal is to protect students, who are
+      frequent scam targets, with a few minutes of hands-on practice.
+    </p>
+  </main>
 </body>
 </html>
