@@ -3,173 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PhishProof — Phishing Practice for Student Orgs</title>
-  <meta name="description" content="PhishProof is a phishing awareness platform for student organizations. Built by Akshat Annappindi.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>">
+  <title>Akshat Annappindi</title>
   <style>
-    :root {
-      --bg: #0b1020;
-      --panel: #131a2e;
-      --panel-2: #1a2340;
-      --text: #e8ecf6;
-      --muted: #9aa5c4;
-      --accent: #5b8cff;
-      --danger: #ff5d6c;
-      --ok: #3ddc97;
-      --border: #26304f;
-    }
-    * { box-sizing: border-box; }
     body {
       margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      background: #ffffff;
+      color: #111111;
+      text-align: center;
+      padding: 0 16px;
     }
-    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-    header { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
-    .logo span { color: var(--danger); }
-    .hero { padding: 64px 0 48px; }
-    .tag {
-      display: inline-block; font-size: .8rem; font-weight: 600; color: var(--accent);
-      background: rgba(91,140,255,.12); padding: 4px 12px; border-radius: 999px; margin-bottom: 16px;
-    }
-    h1 { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.1; margin: 0 0 20px; letter-spacing: -0.03em; }
-    h1 em { font-style: normal; color: var(--danger); }
-    .lead { font-size: 1.15rem; color: var(--muted); max-width: 680px; margin: 0; }
-    section { padding: 40px 0; }
-    h2 { font-size: 1.6rem; margin: 0 0 8px; letter-spacing: -0.02em; }
-    .sub { color: var(--muted); margin: 0 0 24px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
-    .card .icon { font-size: 1.6rem; }
-    .card h3 { margin: 8px 0 6px; font-size: 1.05rem; }
-    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
-
-    /* Demo */
-    .demo { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
-    .mail-head { background: var(--panel-2); padding: 16px 20px; border-bottom: 1px solid var(--border); font-size: .92rem; }
-    .mail-head div { margin: 2px 0; }
-    .mail-head b { color: var(--muted); font-weight: 500; display: inline-block; width: 64px; }
-    .mail-body { padding: 20px; font-size: .98rem; }
-    .flag {
-      cursor: pointer; border-bottom: 2px dotted var(--muted); border-radius: 3px; padding: 0 2px;
-      transition: background .15s;
-    }
-    .flag:hover { background: rgba(255,255,255,.06); }
-    .flag.found { background: rgba(255,93,108,.18); border-bottom-color: var(--danger); }
-    .btn {
-      display: inline-block; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 8px;
-      font-weight: 600; text-decoration: none; margin-top: 8px;
-    }
-    .feedback { border-top: 1px solid var(--border); padding: 16px 20px; background: var(--panel-2); min-height: 64px; }
-    .feedback .score { font-weight: 700; }
-    .feedback .msg { color: var(--muted); margin: 4px 0 0; font-size: .95rem; }
-    .feedback .msg.hit { color: var(--text); }
-    .feedback .msg.hit::before { content: "🚩 "; }
-
-    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
-    .stat { text-align: center; }
-    .stat .num { font-size: 2rem; font-weight: 800; color: var(--accent); }
-
-    footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 32px 0 48px; text-align: center; color: var(--muted); }
-    .author { font-size: 1.1rem; color: var(--text); font-weight: 600; }
+    h1 { margin: 0 0 12px; font-size: 2.5rem; }
+    p { margin: 0; font-size: 1.25rem; color: #555555; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">🎣 Phish<span>Proof</span></div>
-      <div style="color:var(--muted);font-size:.9rem">by Akshat Annappindi</div>
-    </header>
-
-    <div class="hero">
-      <div class="tag">Phishing awareness for student organizations</div>
-      <h1>Spot the scam <em>before</em> it spots you.</h1>
-      <p class="lead">
-        PhishProof is a phishing awareness platform for student organizations. Members practice spotting
-        realistic fake emails and texts aimed at college students, click the red flags for instant feedback,
-        and club officers track which scams trip people up most. The goal is to protect students — who are
-        frequent scam targets — with just a few minutes of hands-on practice.
-      </p>
-    </div>
-
-    <section>
-      <h2>How it works</h2>
-      <p class="sub">Short, realistic drills instead of long, boring trainings.</p>
-      <div class="grid">
-        <div class="card">
-          <div class="icon">📩</div>
-          <h3>Realistic scenarios</h3>
-          <p>Fake financial aid notices, job offers, textbook deals, and "your account is locked" texts modeled on scams students actually get.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🚩</div>
-          <h3>Click the red flags</h3>
-          <p>Tap suspicious senders, links, and urgent language to get instant feedback explaining why each one is a warning sign.</p>
-        </div>
-        <div class="card">
-          <div class="icon">📊</div>
-          <h3>Officer dashboard</h3>
-          <p>Club officers see which scams trip members up most, so they know what to cover at the next meeting.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Try it: find the 4 red flags</h2>
-      <p class="sub">Click anything in this email that looks suspicious.</p>
-      <div class="demo">
-        <div class="mail-head">
-          <div><b>From:</b> <span class="flag" data-why="The sender domain is 'univ-finaid-support.com', not your school's real .edu address.">Financial Aid Office &lt;notice@univ-finaid-support.com&gt;</span></div>
-          <div><b>Subject:</b> ACTION REQUIRED: Your refund is on hold</div>
-        </div>
-        <div class="mail-body">
-          <p>Dear Student,</p>
-          <p>We were unable to process your Fall semester refund of <strong>$1,248.00</strong>.
-            <span class="flag" data-why="Fake urgency: scammers pressure you to act fast so you don't stop and think.">You must verify your information within 24 hours or your refund will be cancelled.</span></p>
-          <p><span class="flag" data-why="Your school will never ask for your password or bank login by email.">Please confirm your student portal password and bank account details</span> using the secure link below:</p>
-          <p><a class="btn flag" href="#" data-why="The button hides where it really goes. Hovering would show an unrelated, non-school website.">Verify My Refund</a></p>
-          <p>Thank you,<br>Student Financial Services</p>
-        </div>
-        <div class="feedback" id="feedback">
-          <div class="score" id="score">0 / 4 red flags found</div>
-          <p class="msg" id="msg">Click a suspicious part of the email to check it.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Why students?</h2>
-      <p class="sub">College students are a favorite target for scammers.</p>
-      <div class="stats">
-        <div class="card stat"><div class="num">New</div><p>Fresh .edu inboxes, first jobs, and first credit cards every year</p></div>
-        <div class="card stat"><div class="num">Money</div><p>Refunds, aid, and paychecks make tempting bait</p></div>
-        <div class="card stat"><div class="num">5 min</div><p>All it takes for a PhishProof practice round</p></div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="author">Created by Akshat Annappindi</div>
-      <div>PhishProof &copy; 2026</div>
-    </footer>
-  </div>
-
-  <script>
-    const flags = document.querySelectorAll('.flag');
-    const scoreEl = document.getElementById('score');
-    const msgEl = document.getElementById('msg');
-    let found = 0;
-    flags.forEach(f => f.addEventListener('click', e => {
-      e.preventDefault();
-      if (!f.classList.contains('found')) { f.classList.add('found'); found++; }
-      scoreEl.textContent = found === flags.length
-        ? `🎉 ${found} / ${flags.length}: you caught them all!`
-        : `${found} / ${flags.length} red flags found`;
-      msgEl.textContent = f.dataset.why;
-      msgEl.className = 'msg hit';
-    }));
-  </script>
+  <h1>Akshat Annappindi</h1>
+  <p>Coming Soon: Phish Proof</p>
 </body>
 </html>
