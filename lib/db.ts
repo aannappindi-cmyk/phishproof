@@ -1,8 +1,17 @@
 import { Pool } from "pg";
 import bcrypt from "bcryptjs";
 
-// Neon (added through Vercel) provides DATABASE_URL automatically.
-const connectionString = process.env.DATABASE_URL ?? process.env.POSTGRES_URL;
+// Neon (added through Vercel) provides DATABASE_URL automatically. If a custom
+// prefix was chosen during setup (e.g. STORAGE_DATABASE_URL), find that too.
+export function findDatabaseEnvName(): string | undefined {
+  const preferred = ["DATABASE_URL", "POSTGRES_URL"];
+  for (const name of preferred) if (process.env[name]) return name;
+  return Object.keys(process.env)
+    .sort()
+    .find((k) => /_(DATABASE_URL|POSTGRES_URL)$/.test(k) && process.env[k]);
+}
+const dbEnvName = findDatabaseEnvName();
+const connectionString = dbEnvName ? process.env[dbEnvName] : undefined;
 
 const globalForDb = globalThis as unknown as { pool?: Pool; schemaReady?: Promise<void> };
 
